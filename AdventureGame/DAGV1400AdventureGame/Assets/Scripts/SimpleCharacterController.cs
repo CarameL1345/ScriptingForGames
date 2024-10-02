@@ -17,13 +17,12 @@ public class SimpleCharacterController : MonoBehaviour
     private void Update()
     {
         MoveCharacter();
-        KeepCharacterOnXAxis();
+      //  KeepCharacterOnXAxis();
     }
 
     private void MoveCharacter()
     {
         movementVector.x = Input.GetAxis("Horizontal");
- //       movementVector.z = Input.GetAxis("Vertical");
         movementVector *= (moveSpeed * Time.deltaTime);
         controller.Move(movementVector);
     }
