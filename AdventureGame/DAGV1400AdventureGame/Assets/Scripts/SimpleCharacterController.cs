@@ -1,11 +1,19 @@
 using UnityEngine;
 
+[RequireComponent(typeof(CharacterController))]
+
 public class SimpleCharacterController : MonoBehaviour
 {
     public float moveSpeed = 5f;
+    public float jumpForce = 3f;
+    public float gravity = -9.81f;
+    public bool grounded;
+
     private CharacterController controller;
+    private Vector3 velocity;
     private Transform thisTransform;
-    private Vector3 movementVector = Vector3.zero;
+
+    // private Vector3 movementVector = Vector3.zero;
 
     private void Start()
     {
@@ -17,14 +25,53 @@ public class SimpleCharacterController : MonoBehaviour
     private void Update()
     {
         MoveCharacter();
-      //  KeepCharacterOnXAxis();
+        ApplyGravity();
+        KeepCharacterOnXAxis();
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.name == "Ground")
+        {
+            grounded = true;
+        }
+    }
+
+    private void OnCollisionExit(Collision collision)
+    {
+        if (collision.gameObject.name == "Ground")
+        {
+            grounded = false;
+        }
     }
 
     private void MoveCharacter()
     {
-        movementVector.x = Input.GetAxis("Horizontal");
-        movementVector *= (moveSpeed * Time.deltaTime);
-        controller.Move(movementVector);
+        var moveInput = Input.GetAxis("Horizontal");
+        var move = new Vector3(moveInput, 0f, 0f) * (moveSpeed * Time.deltaTime);
+        controller.Move(move);
+
+        if (Input.GetButtonDown("Jump") && grounded)
+        {
+            velocity.y = Mathf.Sqrt(jumpForce * -2f * gravity);
+        }
+
+    }
+
+    private void ApplyGravity()
+    {
+        if (!grounded)
+        {
+            velocity.y += gravity * Time.deltaTime;
+        }
+        else
+        {
+            velocity.y = 0f;
+        }
+
+        // apply velocity to controller
+        controller.Move(velocity * Time.deltaTime);
+
     }
 
     private void KeepCharacterOnXAxis()
@@ -34,4 +81,6 @@ public class SimpleCharacterController : MonoBehaviour
         currentPosition.z = 0f;
         thisTransform.position = currentPosition;
     }
+
 }
+
