@@ -350,6 +350,79 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c9b11068fe8d994b8cbd6eea9dde0de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1001 &1281223284
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 810868342526960906, guid: f2c45df253f77f04db864c8225cdf4d7, type: 3}
+      propertyPath: m_Name
+      value: Spiked Ball Prefab
+      objectReference: {fileID: 0}
+    - target: {fileID: 913363771837047238, guid: f2c45df253f77f04db864c8225cdf4d7, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 1088257312}
+    - target: {fileID: 913363771837047238, guid: f2c45df253f77f04db864c8225cdf4d7, type: 3}
+      propertyPath: hitTrigger
+      value: 
+      objectReference: {fileID: 1088257312}
+    - target: {fileID: 913363771837047238, guid: f2c45df253f77f04db864c8225cdf4d7, type: 3}
+      propertyPath: triggerEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 913363771837047238, guid: f2c45df253f77f04db864c8225cdf4d7, type: 3}
+      propertyPath: triggerEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4483757155379508231, guid: f2c45df253f77f04db864c8225cdf4d7, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.06
+      objectReference: {fileID: 0}
+    - target: {fileID: 4483757155379508231, guid: f2c45df253f77f04db864c8225cdf4d7, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.86
+      objectReference: {fileID: 0}
+    - target: {fileID: 4483757155379508231, guid: f2c45df253f77f04db864c8225cdf4d7, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.43
+      objectReference: {fileID: 0}
+    - target: {fileID: 4483757155379508231, guid: f2c45df253f77f04db864c8225cdf4d7, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4483757155379508231, guid: f2c45df253f77f04db864c8225cdf4d7, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4483757155379508231, guid: f2c45df253f77f04db864c8225cdf4d7, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4483757155379508231, guid: f2c45df253f77f04db864c8225cdf4d7, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4483757155379508231, guid: f2c45df253f77f04db864c8225cdf4d7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4483757155379508231, guid: f2c45df253f77f04db864c8225cdf4d7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4483757155379508231, guid: f2c45df253f77f04db864c8225cdf4d7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f2c45df253f77f04db864c8225cdf4d7, type: 3}
 --- !u!1 &1318393666
 GameObject:
   m_ObjectHideFlags: 0
@@ -565,3 +638,4 @@ SceneRoots:
   - {fileID: 192730086}
   - {fileID: 1909987475}
   - {fileID: 1318393669}
+  - {fileID: 1281223284}
