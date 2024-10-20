@@ -3,6 +3,7 @@ using UnityEngine.Events;
 
 public class SimpleEventTrigger : MonoBehaviour
 {
+
     public UnityEvent triggerEvent;
 
     private void OnTriggerEnter(Collider other)
