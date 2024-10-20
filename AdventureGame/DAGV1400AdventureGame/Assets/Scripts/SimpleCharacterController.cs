@@ -12,6 +12,9 @@ public class SimpleCharacterController : MonoBehaviour
     private Vector3 velocity;
     private Transform thisTransform;
 
+    public SimpleFloatData staminaData;
+    public SimpleImageBehavior staminaUI;
+
 
     // private Vector3 movementVector = Vector3.zero;
 
@@ -28,6 +31,7 @@ public class SimpleCharacterController : MonoBehaviour
         {
             velocity.y = Mathf.Sqrt(jumpForce * -2f * gravity);
             Debug.Log("Jump");
+            staminaData.UpdateValue(-0.1f);
         }
 
         //Debug.Log(controller.isGrounded);
@@ -35,6 +39,8 @@ public class SimpleCharacterController : MonoBehaviour
         MoveCharacter();
         ApplyGravity();
         KeepCharacterOnXAxis();
+        RegenerateStamina();
+        UpdateStaminaUI();
     }
    
     private void MoveCharacter()
@@ -50,6 +56,22 @@ public class SimpleCharacterController : MonoBehaviour
 
         // apply velocity to controller
         controller.Move(velocity * Time.deltaTime);
+    }
+
+    private void RegenerateStamina()
+    {
+        if(staminaData != null && Mathf.Approximately(staminaData.value, 1) == false)
+        {
+            staminaData.UpdateValue(0.03f * Time.deltaTime);
+        }
+    }
+
+    private void UpdateStaminaUI()
+    {
+        if (staminaUI != null)
+        {
+            staminaUI.UpdateWithFloatData();
+        }
     }
 
     private void KeepCharacterOnXAxis()

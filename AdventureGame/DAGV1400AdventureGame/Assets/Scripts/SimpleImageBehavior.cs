@@ -10,7 +10,6 @@ public class SimpleImageBehavior : MonoBehaviour
     private void Start()
     {
         imageObj = GetComponent<Image>();
-        Debug.Log(dataObj.value);
     }
 
     public void UpdateWithFloatData()
