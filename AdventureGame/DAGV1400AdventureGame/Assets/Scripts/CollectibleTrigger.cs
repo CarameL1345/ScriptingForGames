@@ -2,11 +2,18 @@ using UnityEngine;
 using UnityEngine.Events;
 using System.Collections;
 
+[RequireComponent(typeof(AudioSource))]
 public class CollectibleTrigger : MonoBehaviour
 {
+    private AudioSource audioSource;
 
     public UnityEvent triggerEvent;
     public Animator animator;
+
+    private void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -14,6 +21,8 @@ public class CollectibleTrigger : MonoBehaviour
         triggerEvent.Invoke();
         
         StartCoroutine(PlayAnimationAndDestroy());
+
+        audioSource.Play();
     }
 
     private IEnumerator PlayAnimationAndDestroy()
