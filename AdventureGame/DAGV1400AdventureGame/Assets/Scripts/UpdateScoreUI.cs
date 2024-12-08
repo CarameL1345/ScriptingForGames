@@ -19,6 +19,5 @@ public class UpdateScoreUI : MonoBehaviour
     public void UpdateWithIntData(int newValue)
     {
         textObj.text = newValue.ToString(CultureInfo.InvariantCulture);
-        Debug.Log("UI Update");
     }
 }

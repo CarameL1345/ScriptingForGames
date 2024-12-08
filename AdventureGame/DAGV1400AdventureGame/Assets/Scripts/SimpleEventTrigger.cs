@@ -8,6 +8,7 @@ public class SimpleEventTrigger : MonoBehaviour
 
     public UnityEvent triggerEvent;
     public Animator animator;
+    private Collider damageCollider;
 
     private void Start()
     {
